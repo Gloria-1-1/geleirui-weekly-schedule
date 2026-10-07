@@ -326,16 +326,28 @@ h1 {
 }
 
 @media (max-width: 430px) {
-  .app-shell { padding-inline: 8px; }
-  .schedule-frame { border-radius: 19px; }
-  .schedule { grid-template-columns: 45px repeat(7, minmax(0, 1fr)); --row-height: 72px; --header-height: 68px; }
-  .event-card { margin: 3px 2px; padding: 6px 3px; border-radius: 12px; }
-  .event-card.overlap { width: calc(50% - 2px); }
+  .app-shell { padding: max(8px, env(safe-area-inset-top)) 5px max(8px, env(safe-area-inset-bottom)); }
+  .topbar { gap: 8px; padding: 0 3px 2px; }
+  .eyebrow, .week-range { display: none; }
+  h1 { font-size: 25px; letter-spacing: -0.03em; }
+  .icon-button { width: 34px; height: 34px; }
+  .week-controls { grid-template-columns: 34px auto minmax(0, 1fr) 34px; gap: 4px; padding: 2px 2px 4px; }
+  .nav-button { width: 34px; height: 34px; }
+  .today-button, .week-picker { min-height: 34px; border-radius: 12px; }
+  .today-button { padding: 0 10px; font-size: 12px; }
+  .week-picker select { height: 32px; font-size: 13px; }
+  .summary-strip { min-height: 25px; gap: 10px; padding: 0 5px 4px; font-size: 11px; }
+  .schedule-frame { border-radius: 15px; }
+  .schedule { grid-template-columns: 38px repeat(7, minmax(0, 1fr)); --row-height: clamp(36px, calc((100vh - 310px) / 10), 50px); --row-height: clamp(36px, calc((100svh - 310px) / 10), 50px); --header-height: 44px; }
+  .event-card { margin: 2px 1px; padding: 4px 2px; border-radius: 9px; }
+  .event-card.overlap { width: calc(50% - 1px); }
+  .event-name { font-size: 10px; line-height: 1.25; -webkit-line-clamp: 4; }
   .event-meta { display: none; }
   .day-header { font-size: 10px; }
-  .day-header .date-number { width: 27px; height: 27px; font-size: 15px; }
-  .period-label strong { font-size: 13px; }
+  .day-header .date-number { width: 23px; height: 23px; font-size: 13px; }
+  .period-label strong { font-size: 12px; }
   .period-label small { display: none; }
+  .tap-hint { margin: 4px 2px 0; font-size: 9px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
