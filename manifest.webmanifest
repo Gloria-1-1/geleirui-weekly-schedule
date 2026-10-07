@@ -1,0 +1,19 @@
+{
+  "name": "葛乐蕊的每周日程",
+  "short_name": "我的日程",
+  "description": "研究生课程与工作室值班周日程",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f5f6",
+  "theme_color": "#f8f5f6",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

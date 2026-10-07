@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f8f5f6" />
+    <meta name="description" content="葛乐蕊的研究生课程与工作室值班周日程" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>葛乐蕊的每周日程</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">2026 学年上学期</p>
+          <h1 id="week-title">第 1 周</h1>
+          <p id="week-range" class="week-range"></p>
+        </div>
+        <button id="info-button" class="icon-button" type="button" aria-label="查看使用说明">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 11.2v5.2M12 7.6h.01"></path>
+          </svg>
+        </button>
+      </header>
+
+      <nav class="week-controls" aria-label="周次切换">
+        <button id="previous-week" class="nav-button" type="button" aria-label="上一周">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg>
+        </button>
+        <button id="today-button" class="today-button" type="button">本周</button>
+        <label class="week-picker">
+          <span>选择周次</span>
+          <select id="week-select" aria-label="选择周次"></select>
+        </label>
+        <button id="next-week" class="nav-button" type="button" aria-label="下一周">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+      </nav>
+
+      <section class="summary-strip" aria-label="本周摘要">
+        <span><i class="legend-dot course-dot"></i>课程 <strong id="course-count">0</strong></span>
+        <span><i class="legend-dot duty-dot"></i>值班 <strong id="duty-count">0</strong></span>
+        <span id="conflict-summary" class="conflict-summary" hidden>有时间重叠</span>
+      </section>
+
+      <main>
+        <div class="schedule-frame">
+          <div id="schedule" class="schedule" aria-label="每周课程和值班表"></div>
+        </div>
+        <p class="tap-hint">轻点卡片查看教师、地点和完整时间</p>
+      </main>
+    </div>
+
+    <dialog id="event-dialog" class="event-dialog">
+      <form method="dialog">
+        <button class="dialog-close" aria-label="关闭" value="close">×</button>
+        <p id="dialog-kicker" class="dialog-kicker"></p>
+        <h2 id="dialog-title"></h2>
+        <dl id="dialog-details"></dl>
+        <button class="dialog-done" value="close">知道了</button>
+      </form>
+    </dialog>
+
+    <dialog id="info-dialog" class="event-dialog info-dialog">
+      <form method="dialog">
+        <button class="dialog-close" aria-label="关闭" value="close">×</button>
+        <p class="dialog-kicker">使用说明</p>
+        <h2>随时查看你的日程</h2>
+        <div class="info-copy">
+          <p>页面默认定位当前教学周。用左右按钮或周次菜单切换。</p>
+          <p>粉色为课程，深灰色为工作室值班；卡片并排时表示时间重叠。</p>
+          <p>想放到手机桌面：在浏览器菜单中选择“添加到主屏幕”。首次打开后，页面也可离线查看。</p>
+          <p>课表原文件未提供具体上课钟点，因此页面按第 1—10 节显示；值班时间按原表的上午 08:00–12:00、下午 14:00–18:00标注。</p>
+        </div>
+        <button class="dialog-done" value="close">知道了</button>
+      </form>
+    </dialog>
+
+    <script src="./schedule-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
